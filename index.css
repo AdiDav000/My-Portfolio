@@ -11,3 +11,27 @@ h3{
     font-weight: bolder;
     font-family: 'Times New Roman', Times, serif;
 }
+
+#Resume{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 1%;
+    /* margin-top: 10px; */
+}
+
+.Cards{
+    /* text-align:  center; */
+    display: block;
+    max-width: 800px;
+}
+h2{
+    text-align: center;
+}
+hr {
+    width: 100%;
+  }
+
