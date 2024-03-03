@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: #283149;
     display: block;
     margin: 0;
 }
@@ -87,12 +87,13 @@ a{
 h1{
     user-select: none;
     font-family: "Dancing Script", cursive;
-  font-weight: 900;
+  font-weight: bold;
    font-style: normal;
-   text-shadow: 1px 1px  black;
+   text-shadow: 1px 1px  #DA0463;
 
     margin-left: 10%;
-    color: rgb(104, 56, 246);
+    /* color: rgb(104, 56, 246); */
+    color: white;
 }
 hr {
     width: 100%;
