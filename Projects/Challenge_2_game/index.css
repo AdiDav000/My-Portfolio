@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+}
+h1{
+    margin: 0;
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 2px blueviolet;
+}
+.container{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    width: 80%;
+    height: 600px;
+    padding: 50px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.card{
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px grey;
+}
+.a{
+    background-color: crimson;
+}
+.b{
+    background-color: cornsilk;
+}
+.c{
+    background-color: darkseagreen;
+}
+.d{
+    background-color: darkorange;
+}
+
+.pressed{
+    opacity: 0.5;
+}
