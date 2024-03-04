@@ -1,62 +1,66 @@
 var pattern = []; 
 var userPattern = [];
 var level = 1;
-var started = true;
-if(started == true){
-    $(document).on("keydown",function(){
+var started = false;
+
+$(document).on("keydown",function(){
+    if(!started){
+        $("body").removeClass("game-over");
         $('h1').text("Level - "+level);
+        started=true;
         nextSequence();
-        started=false;
-    })
+    }
+})
+
+$(".card").on("click",function(e){
+    $('#'+e.target.id).addClass("pressed");
+    setTimeout(function(){
+        $('#'+e.target.id).removeClass("pressed");
+    },100);
+    if(started){
+        userPattern.push(e.target.id);
+        check();
+    }
+})
+function nextSequence(){
+    var r = Math.random()*4;
+    r=Math.floor(r)+1;
+    pattern.push(r);
+    $('#'+r).addClass("pressed");
+    setTimeout(function(){
+        $('#'+r).removeClass("pressed");
+    },100);
 }
 
-function nextSequence(){
-    var i = 0;
-    while(i<level){
-        var r = Math.random()*4;
-        r=Math.floor(r)+1;
-        pattern.push(r);
-        $('#'+r).addClass("pressed");
-        setTimeout(function(){
-            $('#'+r).removeClass("pressed");
-        },100);
-        i++;
+function check(){
+    var index = 0;
+    console.log(userPattern);
+    console.log(pattern);
+    while(index<userPattern.length){
+        if(userPattern[index]==pattern[index]){
+            if(userPattern.length==pattern.length){
+                level++;
+                $('h1').text("Level - "+level);
+                console.log("you won");
+                userPattern.length=0;
+                nextSequence();
+            }
+        }
+        else{
+            console.log("you lost");
+            $("h1").text("Game Over. Press any key to start again");
+            $("body").addClass("game-over");
+            restartGame();
+            break;
+        }
+        index++;
     }
 }
-// function check(){
-//     var i=0;
-//     $(".card").on("click",function(event){
-//         $('#'+event.target.id).addClass("pressed");
-//         // while(i<buttons.length){
-//             if(event.target.id==buttons[i]){
-//                 level+=1;
-//                 $('h1').text("Level - "+level);
-//                 setTimeout(playGame(),2000);
-//                 i++;
-//             }
-//             else{
-//                 $("body").css("background-color","red");
-//                 $("h1").text("Game Over");
-//                 // gameover=true;
-//             }
-//         // }
-//         setTimeout(function(){
-//             $('#'+event.target.id).removeClass("pressed");
-//         },100);
-//         // console.log(buttons);
-//     })
-// }
 
-// function checkPress(id){
-//     if(id==buttons[key]){
-//         level+=1;
-//         // playGame();
-//         setTimeout(playGame(),2000);
-//     }
-//     else{
-//         $("body").css("background-color","red");
-//         $("h1").text("Game Over");
-//         gameover=true;
-//     }
-    
-// }
+function restartGame(){
+    started = false;
+    index=0;
+    level=1;
+    userPattern.length=0;
+    pattern.length=0;
+}

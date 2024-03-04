@@ -49,3 +49,7 @@ h1{
 .pressed{
     opacity: 0.5;
 }
+
+.game-over{
+    background-color: crimson;
+}
