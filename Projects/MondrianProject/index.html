@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    body{
+      margin: 0px;
+    }
+    .container{
+      background-color: #232629;
+      width: 748px;
+      height: 748px;
+      display: grid;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 22px;
+      gap: 9px;
+    }
+    .a{
+      background-color: #E72F24;
+    }
+    .b{
+      background-color: #F0F1EC;
+      grid-column: span 3;
+    }
+    .c{
+      background-color: #F0F1EC;
+      grid-row: span 2;
+    }
+    .d{
+      background-color: #F0F1EC;
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+    .e{
+      background-color: #004592;
+    }
+    .f{
+      background-color: #F0F1EC;
+      grid-row: span 2;
+    }
+    .g{
+      background-color: #F0F1EC;
+    }
+    .h{
+      background-color: #F9D01E;
+    }
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="a cards"></div>
+    <div class="b cards"></div>
+    <div class="c cards"></div>
+    <div class="d cards"></div>
+    <div class="e cards"></div>
+    <div class="f cards"></div>
+    <div class="g cards"></div>
+    <div class="h cards"></div>
+  </div>
+</body>
+
+</html>
