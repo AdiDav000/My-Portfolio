@@ -16,6 +16,7 @@ $(document).on("keydown",function(){
 
 var current = 0;
 $(".card").on("click",function(e){
+    playSound(1);
     $('#'+e.target.id).addClass("pressed");
     setTimeout(function(){
         $('#'+e.target.id).removeClass("pressed");
@@ -47,6 +48,7 @@ function check(){
                 level++;
                 $('h1').text("Level - "+level);
                 console.log("you won");
+                playSound(2);
                 userPattern.length=0;
                 current = 0;
                 setTimeout(function(){
@@ -59,6 +61,7 @@ function check(){
             console.log("you lost");
             $("h1").text("Game Over. Press any key to start again");
             $("body").addClass("game-over");
+            playSound(3);
             restartGame();
         }
         // index++;
@@ -72,4 +75,19 @@ function restartGame(){
     current = 0;
     userPattern.length=0;
     pattern.length=0;
+}
+
+function playSound(n){
+    if (n==1){
+        var audio = new Audio("./sounds/click.wav");
+        audio.play();
+    }
+    else if (n==2){
+        var audio = new Audio("./sounds/bonus.wav");
+        audio.play();
+    }
+    else{
+        var audio = new Audio("./sounds/gameover.wav");
+        audio.play();
+    }
 }
