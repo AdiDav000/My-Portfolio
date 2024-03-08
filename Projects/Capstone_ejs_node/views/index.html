@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog Website</title>
+        <link rel="stylesheet" href="../public/styles/index.css";>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&family=Ro
+boto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header"><h1>Blogger</h1>
+            <div class="header-buttons">
+                <button>Btn 1</button>
+                <button>Btn 2</button>
+                <button>Btn 3</button>
+                <button>Btn 4</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="a cards"></div>
+            <div class="main-posts cards"></div>
+            <div class="new-posts cards">
+                <form action="/new-post" method="post">
+                    <input type="text" placeholder="Title" class="input">
+                    <textarea placeholder="Content" rows="5"></textarea>
+                    <button type="submit" class="post">Post</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
