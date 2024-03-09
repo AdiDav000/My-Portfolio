@@ -141,6 +141,13 @@ footer{
     border: 0px;
     align-items: center;
     justify-content: center;
+    box-shadow: 1px 1px 3px 1px #891652;
+    font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20px;
+  color: #891652;
 }
 .menu-buttons:hover{
     transition: 0.2s;
