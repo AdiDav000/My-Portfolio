@@ -42,6 +42,7 @@ h1{
 .cards{
     border-radius: 30px;
     box-shadow: 1px 1px 3px 1px #40679E;
+    min-height: 300px;
     max-height: 44%;
 }
 .a{
@@ -54,7 +55,7 @@ h1{
     border-bottom-right-radius: 5px;
     background-color: #EFECEC;
     overflow-y: scroll;
-    max-height: 44%;
+    max-height: 550px;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -82,23 +83,24 @@ ul{
     width: 97%;
     height: 200px;
     margin: 10px auto;
-    background-color: #40A2E3;
+    background-color: #FFEDD8;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 20% 50% 25%;
     gap: 5px;
+    box-shadow: 1px 1px 3px #891652;
 }
 .Posts:hover{
-    background-color: #0B60B0;
+    background-color:#FFE6E6 ;
 }
 .post-user{
     grid-column: span 2;
     /* background-color: red; */
     height: 100%;
     width: 100%;
-    margin: 8px;
-    margin-left: 10px;
+    margin: 10px;
+    /* margin-left: 10px; */
     display: flex;
     justify-content: flex-start;
     gap: 10px;
@@ -120,7 +122,7 @@ ul{
   font-weight: 900;
   font-style: normal;
   font-size: 1em;
-  color: whitesmoke;
+  color: #2D9596;
 }
 .post-title{
     /* background-color: #891652; */
@@ -129,6 +131,7 @@ ul{
     margin: 5px;
     text-align: center;
     justify-content: center;
+    margin-top: 10px;
 }
 .post-title > p{
     margin: 0;
@@ -136,13 +139,15 @@ ul{
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-size: 2em;
-  color: whitesmoke;
+  font-size: 1.75em;
+  color: #2D9596;
 }
 .post-text{
     grid-row: span 1;
     grid-column: span 5;
     height: 100%;
+    border-top: 2px solid #FF004D;
+    padding: 2px;
     /* background-color: #F4EDCC; */
     margin: 10px;
     font-family: "Roboto Condensed", sans-serif;
@@ -150,7 +155,7 @@ ul{
   font-weight: 900;
   font-style: normal;
   font-size: 1em;
-  color: whitesmoke;
+  color: #2D9596;
 }
 .post-footer{
     grid-column: span 5;
@@ -282,7 +287,7 @@ form > button:hover{
     }
     .container{
         grid-template-columns: 50vw auto;
-        grid-template-rows: auto;
+        grid-template-rows: auto auto auto;
     }
     .header-buttons{
         margin-left: 30px;
@@ -291,7 +296,8 @@ form > button:hover{
         margin-left: 20px;
     }
     .cards{
-        max-height: none;
+        min-height: none;
+        /* max-height: none; */
     }
     .a{
         grid-row: span 2;
@@ -299,13 +305,13 @@ form > button:hover{
     .main-posts{
         grid-column: span 2;
         order: 3;
-        max-height: 44%;
+        /* max-height: 44%; */
     }
     .Posts{
-        height: 100px;
+        height: 150px;
     }
     .post-title >p{
-        font-size: 1em;
+        font-size: 1.5em;
     }
     .new-posts{
         grid-row: span 2;
