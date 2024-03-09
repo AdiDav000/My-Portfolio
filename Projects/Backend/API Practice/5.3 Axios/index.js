@@ -27,29 +27,33 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   console.log(req.body);
   try{
-    var response;
-    var result;
-    if(req.body["participants"]==="" && req.body["type"]===""){
-      response = await axios.get(`https://bored-api.appbrewery.com/random`);
-      result = response.data;
-    }else if (req.body["participants"]===""){
-      response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body["type"]}`);
-      result = response.data;
-    }
-    else if (req.body["type"]===""){
-      response = await axios.get(`https://bored-api.appbrewery.com/filter?participants=${req.body["participants"]}`);
-      result = response.data;
-    }
-    else{
-      response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body["type"]}&participants=${req.body["participants"]}`);
-      result = response.data;
-    }
+    // var response;
+    // var result;
+    // if(req.body["participants"]==="" && req.body["type"]===""){
+    //   response = await axios.get(`https://bored-api.appbrewery.com/random`);
+    //   result = response.data;
+    // }else if (req.body["participants"]===""){
+    //   response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body["type"]}`);
+    //   result = response.data;
+    // }
+    // else if (req.body["type"]===""){
+    //   response = await axios.get(`https://bored-api.appbrewery.com/filter?participants=${req.body["participants"]}`);
+    //   result = response.data;
+    // }
+    // else{
+    //   response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body["type"]}&participants=${req.body["participants"]}`);
+    //   result = response.data;
+    // }
+    // console.log(result);
+    // if(result.length>1){
+    //   res.render("index.ejs",{data:result[0]});  
+    // }else{
+    //   res.render("index.ejs",{data:result});
+    // }
+    const response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${req.body["type"]}&participants=${req.body["participants"]}`);
+    const result = response.data;
     console.log(result);
-    if(result.length>1){
-      res.render("index.ejs",{data:result[0]});  
-    }else{
-      res.render("index.ejs",{data:result});
-    }
+    res.render("index.ejs",{data:result[0]});
   }
   catch(err){
 
