@@ -14,8 +14,9 @@ body{
     height: 100%;
     width:100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 h1{
@@ -149,4 +150,28 @@ h1{
   }
   input:focus{
     outline: none;
+  }
+  .scrollable-section{
+    background-color: #F6995C;
+    overflow-y: scroll;
+    margin-top: 30px;
+    width: 80%;
+    height: 300px;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  ::-webkit-scrollbar{
+    margin-right: 20px;
+    width: 5px;
+    max-height: 100px;
+    background-color: #fff;
+  }
+  ::-webkit-scrollbar-track{
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
   }

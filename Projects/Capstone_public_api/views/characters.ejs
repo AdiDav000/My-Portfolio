@@ -5,5 +5,16 @@
         <input type="text" name="name" placeholder="Name">
         <input type="submit" name="submit" class="submit">
     </form>
+    <div class="scrollable-section">
+        <ul>
+            <% if(locals.content){ %>
+            <% for (var i=0;i<content.length;i++){ %>
+            <li>
+                HEllo
+            </li>
+            <% } %>
+            <% } %>
+        </ul>
+    </div>
 </div>
 </body>

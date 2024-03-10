@@ -28,7 +28,7 @@ app.post("/characters", async(req,res)=>{
         var response = await axios.get(API_URL+"characters/"+`${req.body["id"]}?filter[name_cont]=${req.body["name"]}`);
         const result = response.data;
         console.log(result);
-        res.render("index.ejs", {content: result.data});
+        res.render("characters.ejs", {content: result.data});
     }
     catch(err){
         res.send(err.message);
