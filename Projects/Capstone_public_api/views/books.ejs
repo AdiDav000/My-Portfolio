@@ -1,0 +1,10 @@
+<%-  include("header.ejs") %>
+<div class="container">
+    <form action="/books" method="post" class="form">
+        <input type="text" name="id" placeholder="ID">
+        <div class="checkbox"><input type="checkbox" name="chapters" class="check" ><label for="chapters">Chapters</label></div>
+        <input type="text" name="chapter-id" placeholder="chapter-id">
+        <input type="submit" name="submit" class="submit">
+    </form>
+</div>
+</body>
