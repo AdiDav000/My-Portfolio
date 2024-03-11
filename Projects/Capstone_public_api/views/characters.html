@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>   
+<body>
+<div class="container">
+    <form action="/characters" method="post" class="form">
+        <input type="text" name="id" placeholder="ID">
+        <input type="text" name="name" placeholder="Name">
+        <input type="submit" name="submit" class="submit">
+    </form>
+    <div class="scrollable-section">
+        <ul>
+            <!-- <% if(locals.content){ %>
+            <% for (var i=0;i<content.length;i++){ %> -->
+            <li>
+                <div class="left">
+                    <p>Family Members</p>
+                    <p>Hair color</p>
+                    <p>height</p>
+                    <p>house</p>
+                    <p>jobs</p>
+                    <p>marital status</p>
+                    <p>nationality</p>
+                </div>
+                <div class="center">
+                    <img src="./5907.jpg">
+                    <p>NAME</p>
+                    <p>ALIAS NAMES</p>
+                    <p>Gender</p>
+                    <p>Born</p>
+                    <p>Died</p>
+                    <p>ID</p>
+                    <p>WIKI</p>
+                </div>
+                <div class="right">
+                    <p>patronus</p>
+                    <p>romances</p>
+                    <p>hair_color</p>
+                    <p>skin_color</p>
+                    <p>species</p>
+                    <p>titles</p>
+                    <p>wands</p>
+                </div>
+            </li>
+            <!-- <% } %>
+            <% } %> -->
+        </ul>
+    </div>
+</div>
+</body>
+</html>
