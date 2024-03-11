@@ -1,20 +1,51 @@
 <%-  include("header.ejs") %>
-<div class="container">
+<body>
+<div class="container" id="others">
     <form action="/characters" method="post" class="form">
         <input type="text" name="id" placeholder="ID">
         <input type="text" name="name" placeholder="Name">
         <input type="submit" name="submit" class="submit">
     </form>
     <div class="scrollable-section">
+        <% if(locals.content){ %>
         <ul>
-            <% if(locals.content){ %>
             <% for (var i=0;i<content.length;i++){ %>
             <li>
-                HEllo
+                <div class="left">
+                    <p>Family Members: <%= content[i].attributes.family_members %></p>
+                    <p>height: <%= content[i].attributes.height %></p>
+                    <p>house: <%= content[i].attributes.house %></p>
+                    <p>jobs: <%= content[i].attributes.jobs %></p>
+                    <p>marital status: <%= content[i].attributes.marital_status %></p>
+                    <p>nationality: <%= content[i].attributes.nationality %></p>
+                </div>
+                <div class="center">
+                    <img src="<%=content[i].attributes.image %>" onerror="this.src='/images/5907.jpg'">
+                    <p>Name: <%= content[i].attributes.name %></p>
+                    <p>ALIAS NAMES: <%= content[i].attributes.alias_names %></p>
+                    <p>Gender: <%= content[i].attributes.gender %></p>
+                    <p>Born: <%= content[i].attributes.born %></p>
+                    <p>Died: <%= content[i].attributes.died %></p>
+                    <p>ID: <%= content[i].id %></p>
+                    <p>WIKI: <%= content[i].attributes.wiki %></p>
+                </div>
+                <div class="right">
+                    <p>patronus: <%= content[i].attributes.patronus %></p>
+                    <p>romances: <%= content[i].attributes.romances %></p>
+                    <p>hair_color: <%= content[i].attributes.hair_color %></p>
+                    <p>skin_color: <%= content[i].attributes.skin_color %></p>
+                    <p>species: <%= content[i].attributes.species %></p>
+                    <p>titles: <%= content[i].attributes.titles %></p>
+                    <p>wands: <%= content[i].attributes.wands %></p>
+                </div>
             </li>
             <% } %>
-            <% } %>
         </ul>
+        <% } else{%>
+                <div class="else"><p>Submit to show all character's details</p>
+                    <p>Put ID or Name to show character details</p>
+                </div>
+            <% } %>
     </div>
 </div>
 </body>
