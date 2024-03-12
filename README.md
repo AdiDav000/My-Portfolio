@@ -15,3 +15,6 @@ https://adidav000.github.io/My-Portfolio/
 - npm express
 - npm axios
 - npm pg (postgres)
+- npm bcrypt
+- npm mongoose
+- npm passport
