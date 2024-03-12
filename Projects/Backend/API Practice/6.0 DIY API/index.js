@@ -44,11 +44,14 @@ app.put("/jokes/:id",(req,res)=>{
     jokeText: req.body.text,
     jokeType: req.body.type,
   }
-  var jokeIndex = jokes.findIndex((joke)=>joke.id==parseInt(req.params.id));
-  // console.log(jokeIndex);
-  jokes[jokeIndex]= body;
-  // console.log(jokes[jokeIndex]);
-  res.json(jokes[jokeIndex]);
+  var joke = jokes.find((joke)=>joke.id==parseInt(req.params.id));
+  // or var jokeIndex = jokes.findIndex((joke)=>joke.id==parseInt(req.params.id));
+  // jokes[jokeIndex] = body;
+ joke.id = body.id;
+ joke.jokeText = body.jokeText;
+ joke.jokeType = body.jokeType;
+
+  res.json(jokeIndex);
 })
 //6. PATCH a joke
 app.patch("/jokes/:id",(req,res)=>{
