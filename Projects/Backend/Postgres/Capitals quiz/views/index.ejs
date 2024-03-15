@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="index.css" rel="stylesheet">
+    </head>
+<body>
+    <h1>Countries quiz</h1>
+    <% if (locals.totalCorrect > -1) {%>
+    <h1>Total correct : <%= totalCorrect %></h1>
+    <% } %>
+    <% if (locals.country) {%>
+        <h1><%= country %></h1>
+        <% } %>
+    <form action="/check" method="post">
+        <input type="text" name="answer">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
