@@ -18,3 +18,5 @@ https://adidav000.github.io/My-Portfolio/
 - npm bcrypt
 - npm mongoose
 - npm passport
+- bcrypt
+- dotenv
