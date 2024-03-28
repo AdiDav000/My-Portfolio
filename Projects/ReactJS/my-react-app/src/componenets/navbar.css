@@ -1,0 +1,22 @@
+.navbar{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    background-color: #41C9E2;
+    height: 70px;
+    /* align-items: center; */
+}
+ul{
+    display: flex;
+    width: 100%;
+    gap: 60px;
+    height: 100%;
+    align-items: center;
+    margin-left: 60px;
+    /* background-color: white; */
+}
+
+li{
+    list-style: none;
+    color: black;
+}
