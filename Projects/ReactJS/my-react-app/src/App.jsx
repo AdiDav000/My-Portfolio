@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import './App.css'
 import NavBar from './componenets/Navbar'
 import Card from './componenets/cards'
 
 function App() {
   const [count, setCount] = useState(0)
+
 
   return (
     <>
