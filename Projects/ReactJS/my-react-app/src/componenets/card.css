@@ -6,3 +6,8 @@
     box-shadow: 1px 1px 1px grey;
     padding: 30px;
 }
+.list{
+    display: flex;
+    flex-direction: column;
+    font-size: 5px;
+}

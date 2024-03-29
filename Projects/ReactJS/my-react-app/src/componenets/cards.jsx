@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import Axios from 'axios'
 import './card.css'
 
 const Card = (props) => {
     const [count, setCount] = useState(0);
     const [showCard, setShowCard] = useState(false);
-    const [items,setItems] = useState([
-        {
-            id: 1,
-            title:"abc",
-            desc:"xyz",
-        },
-        {
-            id:2,
-            title:"adc",
-            desc:"zyx",
-        }
-    ]);
-    // useEffect(()=>{
-    //     alert("Hey");
-    //   },[count])
+    const [items,setItems] = useState([]);
+    const fetchPost= async ()=>{
+        const res = await Axios.get("https://api.publicapis.org/entries");
+        setItems(res.data.entries);
+    }
+    useEffect(()=>{
+        // Axios.get("https://api.publicapis.org/entries").then(
+        //     (res)=>{
+        //         setItems(res.data.entries);
+        //     }
+        // )
+        fetchPost();
+      },[])
     const Item = ({item})=>{
         return (
-            <>
-                <h1>{item.title}</h1>
-                <h1>{item.desc}</h1>
-            </>
+            <div className='list'>
+                <h1>{item.API}</h1>
+            </div>
         )
     }
   return (
@@ -32,6 +30,7 @@ const Card = (props) => {
     <button style={{height: '30px', backgroundColor: 'crimson', border: 'none', padding: '5px',
  borderRadius: '10px', color:'whitesmoke'}} onClick={()=>{setShowCard(!showCard)}}>Click me</button>
     {items.map((item)=>{
+        // console.log(items[0]);
         return (<Item item={item}></Item>
         )
     })}
