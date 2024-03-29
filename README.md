@@ -12,11 +12,10 @@ https://adidav000.github.io/My-Portfolio/
 - <meta name="viewport"  content="width=device-width, initial-scale=1.0"
 
 # Packages used -
-- npm express
-- npm axios
-- npm pg (postgres)
-- npm bcrypt
-- npm mongoose
-- npm passport
-- bcrypt
-- dotenv
+- **npm express** - Simplifies NodeJS APIs (backend)
+- **npm axios** -  HTTP Client(frontend + backend)
+- **npm pg** - SQL Database (postgres) (backend)
+- **npm bcrypt** - Encryption (frontend + backend)
+- **npm mongoose** - MongoDB schema creator (backend)
+- **npm passport** - Session and cookie handler (backend)
+- **dotenv** - Layer of security to hide keys (frontend - backend)
