@@ -5,9 +5,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow the HTTP methods you need
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Allow the headers you need
   next();
 });
 
@@ -28,12 +28,16 @@ app.get("/posts", async (req, res) => {
 
 app.put("/posts/:id", async (req, res) => {
   const id = parseInt(req.params.id);
-  console.log(parseInt(req.query.abc));
-  console.log(id);
-  // await db.query("UPDATE posts SET TABLE SET LIKES = $1",[req.body.likes])
+  const result = await db.query("UPDATE posts SET LIKES = $1 where id = $2", [req.body.likes, id]);
+  res.send("Success");
 });
+
+app.delete("/posts/:id",async (req,res)=>{
+  const id = parseInt(req.params.id);
+  const result = await db.query("Delete from posts where id = $1",[id]);
+  res.send("Success");
+})
 app.post("/posts/new", async (req, res) => {
-  console.log(req.body);
   const date = new Date();
   const result = await db.query(
     "INSERT INTO posts(post_title,post_text,likes,user_id,date) VALUES($1,$2,$3,$4,$5)",

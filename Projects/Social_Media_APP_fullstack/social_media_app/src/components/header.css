@@ -1,0 +1,44 @@
+.header-buttons > .navSelected >button{
+    background-color: #FFEDD8;
+    /* width: 80px; */
+    transform: scale(1.05);
+    width: 90px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #891652;
+    font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20px;
+  color: #891652;
+    
+}
+.header-buttons > .navNotSelected >button{
+    background-color: #FFEDD8;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #891652;
+    font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20px;
+  color: #891652;
+    
+}
+.header-buttons > .navSelected> button:hover{
+    transition: 0.1s;
+    cursor: pointer;
+    transform: scale(1.1);
+    width: 100px;
+}
+.header-buttons > .navNotSelected> button:hover{
+    transition: 0.1s;
+    cursor: pointer;
+    transform: scale(1.1);
+    width: 100px;
+}

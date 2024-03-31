@@ -1,16 +1,24 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Main from './components/main'
 import Header from './components/header'
-import Axios from 'axios';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 
 function App() {
+  const router = new createBrowserRouter([
+    {
+      path:"/",
+      element:<><Header></Header><Main/></>,
+    },
+    {
+      path:"/user",
+      element: <><Header></Header><h1>Hello</h1></>
+    }
+  ])
   return (
     <>
-      <Header></Header>
-      <Main></Main>
+    {/* <Header></Header> */}
+    <RouterProvider router={router}/>
+      {/* <Main></Main> */}
     </>
   )
 }

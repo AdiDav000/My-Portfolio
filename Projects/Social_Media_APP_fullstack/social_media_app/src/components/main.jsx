@@ -34,7 +34,7 @@ const Main = () => {
           <ul>
             {posts.map((post) => {
               // console.log(posts);
-              return <Post post={post} key={post.id}></Post>;
+              return <Post post={post} key={post.id} fetchPost={fetchPost}></Post>;
             })}
           </ul>
         </div>
