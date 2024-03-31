@@ -1,3 +1,47 @@
+.header{
+    /* grid-column: span 3; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #008DDA;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0.2px 0.2px 5px 1px #40679E;
+    z-index: 1000;
+    /* flex-wrap: wrap; */
+}
+.header> h1{
+    font-size: 40px;
+    color: #F4EDCC;
+    text-shadow: 2px 3px 2px #1B1A55;
+    background-color: #FF004D;
+    border: 3.5px dotted #FAEF5D;
+    border-radius: 50px;
+    padding:2px 20px 5px 20px;
+    margin:0;
+    margin-left: 200px;
+    cursor: pointer;
+    user-select: none;
+}
+.header-buttons{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    /* margin-left: 100px; */
+    flex-wrap: wrap;
+    margin-right: 100px;
+    gap: 5px;
+    /* flex-grow: 200px; */
+    /* margin-right: px; */
+}
+
 .header-buttons > .navSelected >button{
     background-color: #FFEDD8;
     /* width: 80px; */
@@ -41,4 +85,34 @@
     cursor: pointer;
     transform: scale(1.1);
     width: 100px;
+}
+
+.header-buttons > .ProfileButton{
+    background-color: wheat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #FF004D;
+    box-shadow: 0px 0px 4px #40679E;
+    cursor: pointer;
+    /* height: 100%; */
+}
+.header-buttons > .ProfileButton > img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.header-buttons > .ProfileButton:hover{
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width:1200px) {
+    .header-buttons> .navSelected > button{
+        transform: scale(0.8);
+    }
+    .header-buttons> .navNotSelected > button{
+        transform: scale(0.8);
+    }
 }

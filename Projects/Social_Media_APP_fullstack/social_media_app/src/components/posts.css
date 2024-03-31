@@ -1,0 +1,104 @@
+.post-user{
+    grid-column: span 2;
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    /* margin-left: 10px; */
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+}
+.user-img{
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #D20062;
+    cursor: pointer;
+}
+.user-img:hover{
+    transform: scale(1.05);
+}
+.user-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.user-name >p{
+    margin: 0;
+    font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1em;
+  color: #2D9596;
+}
+.post-title{
+    /* background-color: #891652; */
+    grid-column: span 3;
+    height: 100%;
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.post-title > p{
+    margin: 0;
+    font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.75em;
+  color: #2D9596;
+}
+.post-text{
+    grid-row: span 1;
+    grid-column: span 5;
+    min-height: fit-content;
+    /* height: 100%; */
+    border-top: 2px solid #FF004D;
+    padding: 2px;
+    /* background-color: #F4EDCC; */
+    margin: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1em;
+  color: #2D9596;
+}
+.post-footer{
+    grid-column: span 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    border-top: 1px solid;
+    background-color: #FF004D;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px -0.1px 1px #D20062;
+
+}
+.post-footer > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #FAEF5D;
+    font-size: 20px;
+}
+.post-footer > div:hover{
+    background-color: #FEFDED;
+    height: 90%;
+    box-shadow: 0.5px 0.5px 3px 0px #EFECEC;
+    font-size: 25px;
+    color: #D20062;
+    cursor: pointer;
+    /* transition: 0.1s; */
+}

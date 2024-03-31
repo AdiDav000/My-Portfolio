@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import image from "../assets/user-pic.jpg";
-import "./main.css";
+import "./posts.css";
 import Axios from "axios";
 import Main from "./main";
 // import { useHistory } from 'react-router-dom';

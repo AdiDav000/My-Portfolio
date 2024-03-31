@@ -2,6 +2,7 @@ import './App.css'
 import Main from './components/main'
 import Header from './components/header'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import Login from './components/Auth/Login'
 
 function App() {
   const router = new createBrowserRouter([
@@ -12,6 +13,10 @@ function App() {
     {
       path:"/user",
       element: <><Header></Header><h1>Hello</h1></>
+    },
+    {
+      path:"/login",
+      element: <><Header></Header><Login></Login></>
     }
   ])
   return (

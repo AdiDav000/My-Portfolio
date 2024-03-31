@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./main.css";
 import Post from "./posts";
 import Axios from "axios";
+import New_post from "./New_post";
 
 const Main = () => {
   const [count, setCount] = useState(0);
   const [posts, setPosts] = useState([]);
+  const[toPost,setToPost] = useState(false);
   const fetchPost = async () => {
     const res = await Axios.get("http://localhost:3000/posts");
     setPosts([...res.data]);
@@ -24,6 +26,7 @@ const Main = () => {
       likes: 0,
     };
     const result = await Axios.post("http://localhost:3000/posts/new", body);
+    setToPost(false);
     await fetchPost();
   };
   return (
@@ -32,29 +35,11 @@ const Main = () => {
         <div className="a cards"></div>
         <div className="main-posts cards">
           <ul>
+            {toPost?<New_post handleSubmit={handlSubmit} Cancel={()=>{setToPost(false)}}></New_post>:<button onClick={()=>{setToPost(true)}} className="toPost">Make a new Post</button>}
             {posts.map((post) => {
-              // console.log(posts);
               return <Post post={post} key={post.id} fetchPost={fetchPost}></Post>;
             })}
           </ul>
-        </div>
-        <div className="new-posts cards">
-          <form onSubmit={handlSubmit}>
-            <input
-              type="text"
-              placeholder="Title"
-              className="input"
-              name="post-title"
-            />
-            <textarea
-              placeholder="Content"
-              rows="5"
-              name="post-content"
-            ></textarea>
-            <button type="submit" className="post">
-              Post
-            </button>
-          </form>
         </div>
       </div>
     </>

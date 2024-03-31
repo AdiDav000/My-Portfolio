@@ -1,5 +1,7 @@
 import express from "express";
 import pg from "pg";
+import router from "./routes/Posts.js";
+import UserRouter from "./routes/Users.js";
 
 const app = express();
 app.use(express.json());
@@ -19,38 +21,9 @@ const db = new pg.Client({
   user: "postgres",
 });
 db.connect();
-app.get("/posts", async (req, res) => {
-  const result = await db.query(
-    "SELECT posts.id,post_title, post_text,likes, user_id,date, username, image FROM posts join users on posts.user_id=users.id order by date desc"
-  );
-  res.send(result.rows);
-});
 
-app.put("/posts/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  const result = await db.query("UPDATE posts SET LIKES = $1 where id = $2", [req.body.likes, id]);
-  res.send("Success");
-});
-
-app.delete("/posts/:id",async (req,res)=>{
-  const id = parseInt(req.params.id);
-  const result = await db.query("Delete from posts where id = $1",[id]);
-  res.send("Success");
-})
-app.post("/posts/new", async (req, res) => {
-  const date = new Date();
-  const result = await db.query(
-    "INSERT INTO posts(post_title,post_text,likes,user_id,date) VALUES($1,$2,$3,$4,$5)",
-    [
-      req.body.title,
-      req.body.content,
-      req.body.likes,
-      req.body.user_id,
-      date.toISOString(),
-    ]
-  );
-  res.send(result);
-});
+app.use("/posts",router);
+app.use("/users",UserRouter);
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
