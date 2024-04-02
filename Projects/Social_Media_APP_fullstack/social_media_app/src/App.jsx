@@ -1,6 +1,7 @@
 import './App.css'
 import Main from './components/main'
 import Header from './components/header'
+import Profile from './components/Profile'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from './components/Auth/Login'
 
@@ -17,6 +18,10 @@ function App() {
     {
       path:"/login",
       element: <><Header></Header><Login></Login></>
+    },
+    {
+      path:"/Profile",
+      element: <><Header></Header><Profile></Profile></>
     }
   ])
   return (
