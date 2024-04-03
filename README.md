@@ -21,3 +21,4 @@ https://adidav000.github.io/My-Portfolio/
 - **dotenv** - Layer of security to hide keys (frontend - backend)
 - **Redux.JS** - Common storage for variables and functions to be used accross all components (frontend, used with React)
 - **JWT** - To create and verify bearer tokens to use in cookies/sessions (backend)
+- **universal-cookie** - To create and manage cookies (key:value pair and expiry) (frontend)
