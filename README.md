@@ -20,3 +20,4 @@ https://adidav000.github.io/My-Portfolio/
 - **npm passport** - Session and cookie handler (backend)
 - **dotenv** - Layer of security to hide keys (frontend - backend)
 - **Redux.JS** - Common storage for variables and functions to be used accross all components (frontend, used with React)
+- **JWT** - To create and verify bearer tokens to use in cookies/sessions (backend)
