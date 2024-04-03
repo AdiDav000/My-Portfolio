@@ -1,5 +1,6 @@
 import express from "express";
 import pg from 'pg';
+// import jwt from 'jsonwebtoken'
 
 const db = new pg.Client({
     host: "localhost",

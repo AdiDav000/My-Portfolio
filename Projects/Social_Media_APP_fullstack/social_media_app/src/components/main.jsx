@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./main.css";
 import Post from "./posts";
 import Axios from "axios";
 import New_post from "./New_post";
+import Friends from "./friends";
 
 const Main = () => {
-  const [count, setCount] = useState(0);
   const [posts, setPosts] = useState([]);
   const[toPost,setToPost] = useState(false);
   const fetchPost = async () => {
@@ -25,14 +25,14 @@ const Main = () => {
       user_id: 1,
       likes: 0,
     };
-    const result = await Axios.post("http://localhost:3000/posts/new", body);
+    await Axios.post("http://localhost:3000/posts/new", body);
     setToPost(false);
     await fetchPost();
   };
   return (
     <>
       <div className="container">
-        <div className="a cards"></div>
+        <Friends></Friends>
         <div className="main-posts cards">
           <ul>
             {toPost?<New_post handleSubmit={handlSubmit} Cancel={()=>{setToPost(false)}}></New_post>:<button onClick={()=>{setToPost(true)}} className="toPost">Make a new Post</button>}

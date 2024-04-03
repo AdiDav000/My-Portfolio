@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './Profile.css'
 import image from '../assets/user-pic.jpg'
 import cover_pic from '../assets/cover-pic.jpg'

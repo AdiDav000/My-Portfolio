@@ -1,9 +1,11 @@
-import React from 'react'
+// import React from 'react'
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import Cookies from 'universal-cookie';
 
 const Login = () => {
+    const cookie = new Cookies();
     const navigate = useNavigate();
     const handeLogin = async(e)=>{
         e.preventDefault();
@@ -13,7 +15,8 @@ const Login = () => {
         })
         if (result.data.id != -1){
             navigate("/");
-            console.log("logged in with user id - "+result.data.id);
+            console.log("logged in with user token - "+result.data.userToken);
+            cookie.set("userToken",result.data.userToken);
         }else{
             alert("Either username or password is wrong");
             navigate("/login");
