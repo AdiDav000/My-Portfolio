@@ -39,6 +39,13 @@ UserRouter.post("/check",async(req,res)=>{
     }
 })
 
+UserRouter.post("/checkToken/:token", async(req,res)=>{
+    // console.log(req.params.token)
+    const result = jwt.verify(req.params.token, process.env.secret);
+    const id = await db.query("SELECT id from USERS where userToken = $1",[req.params.token]);
+    res.send({"check":result, "id": id.rows[0].id});
+})
+
 UserRouter.post("/new",async (req,res)=>{
     
 })
