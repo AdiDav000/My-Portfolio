@@ -51,3 +51,6 @@
     color: #F2613F;
     cursor: pointer;
 }
+.login_form >.loginButton:hover{
+    transform: scale(1.02);
+}

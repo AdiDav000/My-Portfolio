@@ -23,7 +23,7 @@ function App() {
     }
 
     fetchData();
-  }, []);
+  },[]);
   const router = new createBrowserRouter([
     {
       path:"/",

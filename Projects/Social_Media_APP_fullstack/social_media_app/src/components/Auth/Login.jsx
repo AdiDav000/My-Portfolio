@@ -14,9 +14,9 @@ const Login = () => {
             password:e.target.elements["password"].value,
         })
         if (result.data.id != -1){
-            navigate("/");
             console.log("logged in with user token - "+result.data.userToken);
             cookie.set("userToken",result.data.userToken);
+            navigate("/");
         }else{
             alert("Either username or password is wrong");
             navigate("/login");
