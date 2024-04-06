@@ -21,6 +21,7 @@ const Login = () => {
             alert("Either username or password is wrong");
             navigate("/login");
         }
+        window.location.reload();
     }
   return (
     <div className='login'>

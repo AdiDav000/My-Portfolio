@@ -1,16 +1,25 @@
-import React from "react";
-import { useState, useEffect } from "react";
+// import React from "react";
+import { useEffect, useState,  } from "react";
 import image from "../assets/user-pic.jpg";
 import "./posts.css";
 import Axios from "axios";
-import Main from "./main";
+import Cookies from 'universal-cookie'
+// import Main from "./main";
 // import { useHistory } from 'react-router-dom';
 
 const Post = ({ post, fetchPost }) => {
   const [like, setLike] = useState(false);
   const [dislike, setDislike] = useState(false);
   const [likes, setLikes] = useState(post.likes);
-  // const history = useHistory();
+  const cookie = new Cookies();
+  const userToken = cookie.get("userToken");
+  useState(() => {
+    if (post.like == true) {
+      setLike(true);
+    } else if (post.like == false) {
+      setDislike(true);
+    }
+  }, [post.like]);
   const handleDelete = async()=>{
     await Axios.delete("http://localhost:3000/posts/"+post.id);
     await fetchPost();
@@ -32,8 +41,14 @@ const Post = ({ post, fetchPost }) => {
       updatedLikes-=1;
       setLikes(likes - 1);
     }
-    const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes});
+    if (like == false){
+    const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes,},{params:{token: userToken,like:true}});
     console.log(result);
+    }else{
+      const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes,},{params:{token: userToken}});
+      console.log(result);
+    }
+    // console.log(result);
   };
   const handleDisLike = async () => {
     let updatedLikes = likes;
@@ -52,8 +67,13 @@ const Post = ({ post, fetchPost }) => {
       updatedLikes+=1;
       setLikes(likes + 1);
     }
-    const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes});
-    console.log(result);
+    if (dislike == false){
+      const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes,},{params:{token: userToken,like:false}});
+      console.log(result);
+      }else{
+        const result = await Axios.put(`http://localhost:3000/posts/${post.id}`,{likes: updatedLikes,},{params:{token: userToken}});
+        console.log(result);
+      }
   };
   return (
     <li className="Posts">

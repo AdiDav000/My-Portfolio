@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './new_post.css'
 const New_post = ({handleSubmit , Cancel}) => {
     const handleSub= async(e)=>{

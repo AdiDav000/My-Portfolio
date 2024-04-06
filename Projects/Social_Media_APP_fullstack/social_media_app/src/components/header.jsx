@@ -14,6 +14,7 @@ const Header = () => {
   const handleLogout=async()=>{
     cookie.remove("userToken");
     navigate("/");
+    window.location.reload();
   }
   return (
     <>

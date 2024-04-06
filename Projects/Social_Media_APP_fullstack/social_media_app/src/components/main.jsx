@@ -4,17 +4,33 @@ import Post from "./posts";
 import Axios from "axios";
 import New_post from "./New_post";
 import Friends from "./friends";
+import { checkToken } from "./Auth/checkLogin";
+import { useNavigate} from 'react-router-dom';
+import Cookies from 'universal-cookie'
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
   const[toPost,setToPost] = useState(false);
+  const cookie = new Cookies();
+  const navigate = useNavigate();
   const fetchPost = async () => {
-    const res = await Axios.get("http://localhost:3000/posts");
+    const token = cookie.get("userToken");
+    const config = {
+      params: {
+        token: token
+      }
+    }
+    const res = await Axios.get("http://localhost:3000/posts",config);
     setPosts([...res.data]);
     console.log(res.data);
   };
   useEffect(() => {
-    fetchPost();
+    const token = checkToken();
+    if(token){
+      fetchPost();
+    }else{
+      navigate("/login")
+    }
   }, []);
   //   console.log(posts);
   const handlSubmit = async (e) => {

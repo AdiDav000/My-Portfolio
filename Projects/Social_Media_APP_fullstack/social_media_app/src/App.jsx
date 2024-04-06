@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
+      console.log("main screen called");
       try {
         const user = await checkSession();
         console.log(user.data);
