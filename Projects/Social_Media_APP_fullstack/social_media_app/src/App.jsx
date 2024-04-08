@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './components/Auth/Login'
 import checkSession from '../src/components/Auth/checkLogin.js'
 import { useEffect, useState } from 'react'
+import Signup from './components/Auth/signup.jsx'
 
 function App() {
   const [userToken, setUserToken] = useState(null);
@@ -41,6 +42,10 @@ function App() {
     {
       path:"/Profile",
       element: <><Header></Header>{userToken? <Profile></Profile>:<Login></Login>}</>
+    },
+    {
+      path:"/signup",
+      element: <><Header></Header><Signup></Signup></>
     }
   ])
   return (

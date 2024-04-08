@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../../assets/pattern_waves.png');
 }
 
 .login_form{
@@ -15,6 +16,7 @@
     gap: 20px;
     background-color: #008DDA;
     border-radius: 10px;
+    box-shadow: 0px 0px 7px #F2613F;
 }
 .login_input{
     width: 85%;
@@ -27,6 +29,8 @@
     font-weight: 900;
     font-style: normal;
     font-size: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 .login_input::placeholder{
     color: whitesmoke;
@@ -53,4 +57,24 @@
 }
 .login_form >.loginButton:hover{
     transform: scale(1.02);
+}
+.login_form > p{
+    font-size: 20px;
+    color: #FEFDED;
+    margin:0px;
+}
+.signupbutton{
+    margin-left: 10px;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    border: 0px;
+    box-shadow: 0px 0px 3px grey;
+    cursor: pointer;
+    font-size: 20px;
+    color: #F2613F;
+    font-weight: 700;
+}
+.signupbutton:hover{
+    transform: scale(1.05);
 }
