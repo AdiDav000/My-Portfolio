@@ -38,10 +38,10 @@ const Main = () => {
     const body = {
       title: e.target.elements["post-title"].value,
       content: e.target.elements["post-content"].value,
-      user_id: 1,
       likes: 0,
     };
-    await Axios.post("http://localhost:3000/posts/new", body);
+    const token = await cookie.get("userToken");
+    await Axios.post("http://localhost:3000/posts/new", body, {params: {token} });
     setToPost(false);
     await fetchPost();
   };

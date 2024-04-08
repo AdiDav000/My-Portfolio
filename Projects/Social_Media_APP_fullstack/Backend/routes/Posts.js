@@ -70,13 +70,14 @@ router.delete("/:id", async (req, res) => {
 router.post("/new", async (req, res) => {
   try {
     const date = new Date();
+    const user = await db.query("SELECT * FROM USERS WHERE usertoken=$1",[req.query.token]);
     const result = await db.query(
       "INSERT INTO posts(post_title,post_text,likes,user_id,date) VALUES($1,$2,$3,$4,$5)",
       [
         req.body.title,
         req.body.content,
         req.body.likes,
-        req.body.user_id,
+        user.rows[0].id,
         date.toISOString(),
       ]
     );
