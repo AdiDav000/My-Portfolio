@@ -22,3 +22,5 @@ https://adidav000.github.io/My-Portfolio/
 - **Redux.JS** - Common storage for variables and functions to be used accross all components (frontend, used with React)
 - **JWT** - To create and verify bearer tokens to use in cookies/sessions (backend)
 - **universal-cookie** - To create and manage cookies (key:value pair and expiry) (frontend)
+- **Lazy Loading** - React.lazy, React.Suspense, To load pages only when needed (frontend)
+- **react-infinite-scroll-component** - To infinite scroll a list (frontend)
