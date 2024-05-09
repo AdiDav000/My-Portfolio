@@ -24,3 +24,4 @@ https://adidav000.github.io/My-Portfolio/
 - **universal-cookie** - To create and manage cookies (key:value pair and expiry) (frontend)
 - **Lazy Loading** - React.lazy, React.Suspense, To load pages only when needed (frontend)
 - **react-infinite-scroll-component** - To infinite scroll a list (frontend)
+- **NodeMailer**
