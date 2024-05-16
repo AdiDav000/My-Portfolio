@@ -25,3 +25,5 @@ https://adidav000.github.io/My-Portfolio/
 - **Lazy Loading** - React.lazy, React.Suspense, To load pages only when needed (frontend)
 - **react-infinite-scroll-component** - To infinite scroll a list (frontend)
 - **NodeMailer**
+- **AutoCannon**
+- **PM2**
